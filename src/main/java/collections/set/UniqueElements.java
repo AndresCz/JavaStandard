@@ -1,13 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package collections.set;
 
-import model.Persona;
+import model.Person;
+
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+
+import static model.Person.Sex.MALE;
 
 /**
  *
@@ -19,16 +18,16 @@ public class UniqueElements {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Persona p1 = new Persona("111", "Juan", "Peréz");
-        Persona p2 = new Persona("112", "Jorge", "López");
-        Persona p3 = new Persona("111", "Juan", "Peréz");
+        Person p1 = new Person("111", "Juan", "Peréz", LocalDate.now(), MALE, "");
+        Person p2 = new Person("112", "Jorge", "López", LocalDate.now(), MALE, "");
+        Person p3 = new Person("111", "Juan", "Peréz", LocalDate.now(), MALE, "");
         
-        Set<Persona> personas = new HashSet();
-        personas.add(p1);
-        personas.add(p2);
-        personas.add(p3);
+        Set<Person> persons = new HashSet();
+        persons.add(p1);
+        persons.add(p2);
+        persons.add(p3);
         
-        for (Persona nombre: personas) {
+        for (Person nombre: persons) {
             System.out.println(nombre);
         }            
 

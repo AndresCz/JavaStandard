@@ -1,15 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package collections.set;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeSet;
-import model.Persona;
+
+import model.Person;
+
+import static model.Person.Sex.MALE;
 
 /**
  *
@@ -43,15 +41,15 @@ public class ElementsWithOrder {
             System.out.println(nombre);
         }
         
-        Set<Persona> personasOrdenadas = new TreeSet();
-        personasOrdenadas.add(new Persona("115", "Juan", "Peréz"));
-        personasOrdenadas.add(new Persona("110", "Jorge", "López"));
-        personasOrdenadas.add(new Persona("100", "Jorge", "Gómez"));
-        personasOrdenadas.add(new Persona("113", "Hector", "Peréz"));
+        Set<Person> personasOrdenadas = new TreeSet();
+        personasOrdenadas.add(new Person("115", "Juan", "Peréz", LocalDate.now(), MALE, ""));
+        personasOrdenadas.add(new Person("110", "Jorge", "López", LocalDate.now(), MALE, ""));
+        personasOrdenadas.add(new Person("100", "Jorge", "Gómez", LocalDate.now(), MALE, ""));
+        personasOrdenadas.add(new Person("113", "Hector", "Peréz", LocalDate.now(), MALE, ""));
 
         System.out.println("Nombres Ordenadods:");
-        for (Persona persona: personasOrdenadas) {
-            System.out.println(persona);
+        for (Person person : personasOrdenadas) {
+            System.out.println(person);
         }
         
         
