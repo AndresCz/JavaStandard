@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 /**
  * Created by daro on 18/02/17.
  */
-public class SearchPersonsOlderThan {
+public class SearchPersons {
 
     interface CheckPerson {
         boolean test(Person p);
