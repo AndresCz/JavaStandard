@@ -1,37 +1,14 @@
 package collections.parallelism;
 
-import model.Person;
-
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
-import java.util.function.Function;
-import java.util.function.BinaryOperator;
-import java.util.Comparator;
-import java.util.function.UnaryOperator;
-import java.util.function.Predicate;
-import java.util.GregorianCalendar;
-import java.util.Collection;
 import java.util.Collections;
-import java.lang.Iterable;
-import java.util.function.Supplier;
-import java.util.Set;
-import java.util.Map;
-import java.util.HashSet;
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.time.chrono.IsoChronology;
-import java.lang.Number;
-import java.util.stream.*;
-import java.util.Optional;
-import java.util.OptionalInt;
+import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
+import java.util.stream.Collectors;
+import model.Person;
 
 public class ParallelismOperations {
 
@@ -39,17 +16,17 @@ public class ParallelismOperations {
 
         // Create sample data
 
-        List<Person> roster = Person.createList();
+        List<Person> persons = Person.createList();
 
         System.out.println("Contents of roster:");
-        roster
+        persons
                 .stream()
                 .forEach(p -> p.printPerson());
         System.out.println();
 
         // 1. Average age of male members in parallel
 
-        double average = roster
+        double average = persons
                 .parallelStream()
                 .filter(p -> p.getGender() == Person.Sex.MALE)
                 .mapToInt(Person::getAge)
@@ -63,7 +40,7 @@ public class ParallelismOperations {
 
         ConcurrentMap<Person.Sex, List<Person>>
                 byGenderParallel =
-                roster
+                persons
                         .parallelStream()
                         .collect(Collectors.groupingByConcurrent(Person::getGender));
 
