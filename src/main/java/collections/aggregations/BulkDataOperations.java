@@ -10,19 +10,19 @@ public class BulkDataOperations {
 
             // Create sample data
 
-            List<Person> roster = Person.createList();
+            List<Person> persons = Person.createList();
 
             // 1. Print names of members, for-each loop
 
             System.out.println("Members of the collection (for-each loop):");
-            for (Person p : roster) {
+            for (Person p : persons) {
                 System.out.println(p.getName());
             }
 
             // 2. Print names of members, forEach operation
 
             System.out.println("Members of the collection (bulk data operations):");
-            roster
+            persons
                     .stream()
                     .forEach(e -> System.out.println(e.getName()));
 
@@ -30,7 +30,7 @@ public class BulkDataOperations {
 
             System.out.println(
                     "Male members of the collection (bulk data operations):");
-            roster
+            persons
                     .stream()
                     .filter(e -> e.getGender() == Person.Sex.MALE)
                     .forEach(e -> System.out.println(e.getName()));
@@ -38,7 +38,7 @@ public class BulkDataOperations {
             // 4. Print names of male members, for-each loop
 
             System.out.println("Male members of the collection (for-each loop):");
-            for (Person p : roster) {
+            for (Person p : persons) {
                 if (p.getGender() == Person.Sex.MALE) {
                     System.out.println(p.getName());
                 }
@@ -46,7 +46,7 @@ public class BulkDataOperations {
 
             // 5. Get average age of male members of the collection:
 
-            double average = roster
+            double average = persons
                     .stream()
                     .filter(p -> p.getGender() == Person.Sex.MALE)
                     .mapToInt(Person::getAge)
