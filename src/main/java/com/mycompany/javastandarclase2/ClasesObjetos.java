@@ -72,7 +72,7 @@ public class ClasesObjetos {
         System.out.println(prof.getMatricula());
         
         Profesor prof3 = (Profesor) prof2;//Casting
-        //System.out.println(prof2.getMatricula());
+        System.out.println(prof3.getMatricula());
         
         Persona p4 = new Alumno("Gonzalo",19,"31");
         p4.hablar();
