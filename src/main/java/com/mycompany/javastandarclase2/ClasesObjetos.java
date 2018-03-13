@@ -51,6 +51,17 @@ public class ClasesObjetos {
         p2.saludo();
         p2.hablar("Hola como te va");
         p2.hablar();
+        
+        //edadMaxima esta definido como static es una variable de Clase
+        //cuando se modifica, se modifica para todas las instancias
+        p2.edadMaxima=160;
+        p.edadMaxima=200;
+        System.out.println(p.edadMaxima);
+        System.out.println(p2.edadMaxima);
+        Persona.edadMaxima=300;
+        System.out.println(Persona.edadMaxima);
+        
+        
     }
     
 }
@@ -58,8 +69,13 @@ public class ClasesObjetos {
 class Persona{
     
     // Atributos ==============================================================
+
     private String nombre;
     private int edad;
+    
+    public static int edadMaxima = 150;
+    // un atributo static es un atributo de clase, es fijo no depende de las 
+    //instancias
     
     /*
         public - se puede acceder desde todo el programa
@@ -110,6 +126,7 @@ class Persona{
     void hablar(){
         this.hablar("Hola soy una persona");
     }
+    
     // Sobrecargar metodo hablar ==============================================
     public void hablar(String msg){
         System.out.println(msg);
