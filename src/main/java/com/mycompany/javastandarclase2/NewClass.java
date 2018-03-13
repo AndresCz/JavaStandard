@@ -25,6 +25,7 @@ public class NewClass {
                     printAyuda();
                     break;
                 case "e":
+                    System.out.println("Chau!");
                     return;
                 case "+":
                     int[] operandos = obtenerOperandos();
