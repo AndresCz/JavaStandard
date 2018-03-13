@@ -61,7 +61,21 @@ public class ClasesObjetos {
         Persona.edadMaxima=300;
         System.out.println(Persona.edadMaxima);
         
+        Alumno a = new Alumno("Florencia",40,"33333");
+        System.out.println(a.getNombre());
+        a.setEdad(45);
+        System.out.println(a.getEdad());
         
+        Profesor prof = new Profesor("Roberto",55,"112AA");
+        
+        Persona prof2 = new Profesor("Julia",60,"22FZA");//Polimorfismo
+        System.out.println(prof.getMatricula());
+        
+        Profesor prof3 = (Profesor) prof2;//Casting
+        //System.out.println(prof2.getMatricula());
+        
+        Persona p4 = new Alumno("Gonzalo",19,"31");
+        p4.hablar();
     }
     
 }
@@ -78,9 +92,10 @@ class Persona{
     //instancias
     
     /*
-        public - se puede acceder desde todo el programa
+        public - se puede acceder desde otras clases
         private - solo se pueden acceder desde la clase solamente
         package default
+        protected - es visible para las sub clases (herencia)
     */
 
     //Constructor de objetos - propiedades ====================================
@@ -141,4 +156,22 @@ class Persona{
     }
 }
 
+class Profesor extends Persona{
+    
+    private String matricula;
+    
+    public Profesor(String nombre, int edad, String matricula) {
+        super(nombre, edad);
+        this.matricula=matricula;
+    }
+    
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String maticula) {
+        this.matricula = maticula;
+    }
+    
+}
 
