@@ -34,7 +34,7 @@ public static void main (String[] arg){
         calculoExtendido=true;
         }else{
         tipoOperacion = scanner.nextLine();
-        if(tipoOperacion == "="){
+        if(tipoOperacion.equals("=")){
             System.out.println(calculoIntermedio);
         }else{
         String operandoB = scanner.nextLine();
