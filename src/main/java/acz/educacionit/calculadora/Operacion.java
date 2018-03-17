@@ -23,32 +23,7 @@ public abstract class  Operacion {
         this.operandoB = operandoB;
     }
     
-    protected static Operacion obtenerOperacion(String tipoOperacion){
-    Operacion operacion = null;
-
-    switch (tipoOperacion) {
-                case "+":
-                    operacion = new Suma();
-                    break;
-                case "-":
-                    operacion = new Resta();
-                    break;
-                case "/":
-                    operacion = new Division();
-                    break;                
-                case "*":
-                    operacion = new Multiplicacion();
-                    break;
-                case "p":
-                    operacion = new Potencia();
-                    break;
-                case "r":
-                    operacion = new Raiz();
-                    break;
-            }
-            return operacion;
-
- }
+    
 
 }
 //Una clase con un metodo abstracto tiene que ser definida como abstracta
