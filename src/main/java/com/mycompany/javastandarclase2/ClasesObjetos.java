@@ -173,5 +173,87 @@ class Profesor extends Persona{
         this.matricula = maticula;
     }
     
+
 }
+// Interfaz ===================================================================
+    /*
+    Tanto interface como abstract sirve para el polimorfismo
+    utilizar metodos de una interface en alguna clase sin necesidad de que haya
+    herencia
+    */
+    
+    interface Programador {
+        public Codigo programar();
+        public void debugear();
+    }
+    class ProgramadorJava implements Programador{
+
+        @Override
+        public Codigo programar(){
+            System.out.println("CodigoJava");
+            return null;
+        }
+
+        @Override
+        public void debugear() {
+        }
+        
+    }
+    class ProgramadorCSharp implements Programador{
+
+        @Override
+        public Codigo programar(){
+            System.out.println("CodigoCSharp");
+            return null;
+        }  
+
+        @Override
+        public void debugear() {
+       
+        }
+        
+    }
+    
+    class Codigo{
+           
+        }
+    
+    class CodigoCSharp extends Codigo{
+    
+        public String Cil(){
+            System.out.println("Cil");
+            return Cil();
+        }
+    }
+    
+    class CodigoJava extends Codigo{
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

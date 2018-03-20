@@ -41,11 +41,19 @@ public static void main (String[] arg){
             calculoExtendido=true;
             
         }else{
-        
+            
+            System.out.println("Ingrese tipo de operacion: (a-ayuda)(=-finalizar operacion)");
+            tipoOperacion = scanner.nextLine();
+            if (tipoOperacion.equals("a")){
+                mostrarAyuda();
+                System.out.println("Ingrese tipo de operacion: (a-ayuda)(=-finalizar operacion)");
+                tipoOperacion = scanner.nextLine();
+            }
             if(tipoOperacion.equals("=")){
                 
                 System.out.println(calculoIntermedio);
                 calculoExtendido=false;
+                break;
             }else{
                 
                 Operacion op2= obtenerOperacion(tipoOperacion);
@@ -62,19 +70,9 @@ public static void main (String[] arg){
                 
                 }
             }
-            System.out.println("Ingrese tipo de operacion: (a-ayuda)");
-            tipoOperacion = scanner.nextLine();
-            if (tipoOperacion.equals("a")){
-            mostrarAyuda();
-            System.out.println("Ingrese tipo de operacion: (a-ayuda)");
-            tipoOperacion = scanner.nextLine();
-            continue;
-          
-        }
             
-        } while(tipoOperacion != "=");
-        
-        
+        } while(!("=".equals(tipoOperacion)));
+     
     }
     
 }
@@ -107,8 +105,7 @@ private static Operacion obtenerOperacion(String tipoOperacion){
 
  }
 
-public static String mostrarAyuda(){
-        String ayuda = null;
+public static void mostrarAyuda(){
         System.out.println("Opciones:");
         System.out.println("+");
         System.out.println("-");
@@ -116,7 +113,6 @@ public static String mostrarAyuda(){
         System.out.println("*");
         System.out.println("p - potencia");
         System.out.println("r - raiz");
-        return ayuda;            
 }
 
 }
