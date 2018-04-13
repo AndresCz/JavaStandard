@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.javastandarcl;
 
 // Herencia ===================================================================
@@ -25,7 +20,7 @@ public class Alumno extends Persona {
 //Polimorfismo con sobre escritura ============================================
     @Override
     public void hablar() {
-        super.hablar("Hola soy un alumno"); //To change body of generated methods, choose Tools | Templates.
+        super.hablar("Hola soy un alumno");
     }
 
 
