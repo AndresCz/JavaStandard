@@ -1,4 +1,4 @@
-package com.mycompany.javastandarcl;
+package com.mycompany.javastandard;
 
 // Herencia ===================================================================
 /*
