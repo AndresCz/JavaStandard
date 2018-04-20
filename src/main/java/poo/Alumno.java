@@ -1,4 +1,4 @@
-package com.mycompany.javastandard;
+package poo;
 
 // Herencia ===================================================================
 /*
